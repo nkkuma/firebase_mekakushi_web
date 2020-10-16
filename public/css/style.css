@@ -1,0 +1,14 @@
+.yokocenter{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tatemargin{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+body {
+    text-size-adjust: 250%;
+}
