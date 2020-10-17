@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
-  <head>        
+  <head>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
     <link rel="stylesheet" href="css/style.css">
@@ -10,6 +11,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+
   </head>
   <body>    
     <!-- header -->
@@ -24,24 +26,38 @@
     </div>
     <div style="text-align:center;" class="h4 tatemargin">目隠し将棋 オンライン対戦 (β版) </div>
     <!-- body -->
+
+    <!-- sengo -->
+    <!-- TODO: sengo might select automatically. -->
+    <div class="yokocenter idinput tatemargin">
+      <input type="checkbox" id="input_sengo" checked data-toggle="toggle" data-on="先手番" data-off="後手番" data-onstyle="success" data-offstyle="warning"/>
+    </div>
+
     <!-- random -->
     <div class="yokocenter tatemargin">
-      <button type="submit" class="btn btn-primary btn-lg">ランダム対戦</button>
+      <button id="start_random" type="submit" class="btn btn-primary btn-lg">ランダム対戦</button>
     </div>
-    <!-- withID -->
+
+    <!-- with GameID -->
+    <!-- GameID-->
     <div style="text-align:center;" class="h5 tatemargin">GameID: 半角英数字のみOK</div>
     <div class="yokocenter idinput tatemargin">
       <div class="input-group mb-3">
         <div class="input-group-prepend">
           <span class="input-group-text" id="basic-addon1">GameID:</span>
         </div>
-        <input type="text" class="form-control" placeholder="GameID" aria-label="GameID" aria-describedby="basic-addon1">
+        <input id="input_gameid" type="text" class="form-control" placeholder="GameID" aria-label="GameID" aria-describedby="basic-addon1">
       </div>
     </div>
     <div class="yokocenter">
-      <button type="submit" class="btn btn-primary btn-lg">友達対戦（GameID）</button>
+      <button id="start_friend" type="submit" class="btn btn-primary btn-lg">友達対戦（GameID）</button>
     </div>
+
     <!-- footer -->
     <div style="text-align:center;" class="h5 tatemargin">developed by nkkuma</div>
+
+    <!-- js -->
+    <script src="js/main_index.js"></script>
+
   </body>
 </html>

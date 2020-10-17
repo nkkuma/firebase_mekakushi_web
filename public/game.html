@@ -28,75 +28,21 @@
       </div>
     </div>
     <div style="text-align:center;" class="h4 tatemargin">目隠し将棋 オンライン対戦 (β版) </div>
-    <div style="text-align:center;" class="h5 tatemargin">GameID: 123456789</div>
-    <div style="text-align:center;" class="h5 tatemargin">あなたの手番です</div>
-    <div style="text-align:center;" class="h5 tatemargin">1手目</div>
+    <div id="div_gameid" style="text-align:center;" class="h5 tatemargin">GameID: 123456789</div>
+    <div id="div_teban" style="text-align:center;" class="h5 tatemargin">あなたの手番です(１手目)</div>
+    <div id="div_before_kif" style="text-align:center;" class="h5 tatemargin">ひとつ前の手：(なし)</div>
     <!-- body -->
-    <div style="text-align:center; display: none;" class="h5 tatemargin">相手が入力中...</div>
-    <div style="text-align:center;">
-      <select class="custom-select custom-select-lg mb-3 numselect tatemargin">
-        <option selected>縦</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-      </select>
-      <select class="custom-select custom-select-lg mb-3 numselect tatemargin">
-        <option selected>横</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
-        <option value="6">6</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="9">9</option>
-      </select>
-      <select class="custom-select custom-select-lg mb-3 komaselect tatemargin">
-        <option value="fu">歩</option>
-        <option value="ky">香</option>
-        <option value="ke">桂</option>
-        <option value="gi">銀</option>
-        <option value="ki">金</option>
-        <option value="ka">角</option>
-        <option value="hi">飛</option>
-        <option value="ou">王</option>
-        <option value="to">と</option>
-        <option value="ny">杏</option>
-        <option value="nk">圭</option>
-        <option value="ng">全</option>
-        <option value="um">馬</option>
-        <option value="ry">龍</option>
-      </select>
-      <select class="custom-select custom-select-lg mb-3 charselect tatemargin">
-        <option selected>(位置)</option>
-        <option value="">(無し)</option>
-        <option value="r">右</option>
-        <option value="l">左</option>
-      </select>
-      <select class="custom-select custom-select-lg mb-3 charselect tatemargin">
-        <option selected>(動作)</option>
-        <option value="">(無し)</option>
-        <option value="u">上</option>
-        <option value="y">寄</option>
-        <option value="h">引</option>
-      </select>
-      <select class="custom-select custom-select-lg mb-3 charselect tatemargin">
-        <option selected>(成/打)</option>
-        <option value="">(無し)</option>
-        <option value="n">成</option>
-        <option value="f">不成</option>
-        <option value="p">打</option>
-      </select>
-    </div>
+    <div id="wait_enemy" style="text-align:center; display: none;" class="h5 tatemargin">相手が入力中...</div>
+    <div id="select_kif" style="text-align:center;"></div>
     <div style="text-align:center;">
       <button id="send" type="submit" class="btn btn-primary btn-lg tatemargin sendbtn">送信</button>
+    </div>
+    <div style="text-align:center;">
+      <button id="giveup" type="submit" class="btn btn-primary btn-lg tatemargin sendbtn">投了</button>
+    </div>
+    <div id="div_after_game" style="text-align:center; display: none;">
+      <div id="div_result" style="text-align:center;" class="h5 tatemargin">あなたの勝ちです。</div>
+      <button id="btn_again" type="submit" class="btn btn-primary btn-lg tatemargin sendbtn">再チャレンジ</button>
     </div>
     <!-- footer -->
     <div style="text-align:center;" class="h5 tatemargin">developed by nkkuma</div>
@@ -112,6 +58,9 @@
     <script src="/__/firebase/init.js"></script>
 
     <!-- Our js -->
+    <script src="js/util.js"></script>
+    <script src="js/util_game.js"></script>
+    <script src="js/game_loadhtml.js"></script>
     <script src="js/main_game.js">import firebase from '@/plugins/firebase'</script>
   </body>
 </html>
