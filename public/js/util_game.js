@@ -11,7 +11,7 @@ function display_enemytern(teban){
 }
 
 function get_kif(){
-    let dict_koma = {}
+    let dict_koma = {"fu":"歩","ky":"香","ke":"桂","gi":"銀","ki":"金","ka":"角","hi":"飛","ou":"王","to":"と","ny":"杏","nk":"圭","ng":"全","um":"馬","ry":"龍"}
     let dict_ichi = {"":"","r":"右","l":"左"}
     let dict_move = {"":"","u":"上","y":"寄","h":"引"}
     let dict_nari = {"":"","n":"成","f":"不成","p":"打"}
@@ -23,4 +23,6 @@ function get_kif(){
     var move    = $("#move").val();
     var nari    = $("#nari").val();
 
+    var kif = String(place_1) + String(place_2) + dict_koma[koma] + dict_ichi[ichi] + dict_move[move] + dict_nari[nari];
+    return kif;
 }

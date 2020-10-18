@@ -25,7 +25,7 @@ $("#send").click(function(){
     var database = firebase.database();
     database.ref(room).push({
         move: tesu,
-        kif: "76歩",
+        kif: get_kif(),
     });
 });
 

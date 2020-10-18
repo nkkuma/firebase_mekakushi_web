@@ -27,10 +27,15 @@
     <div style="text-align:center;" class="h4 tatemargin">目隠し将棋 オンライン対戦 (β版) </div>
     <!-- body -->
 
+    <!-- signin -->
+    <div class="yokocenter tatemargin">
+      <button id="signin_google" type="submit" class="btn btn-info btn-lg">google sign in</button>
+    </div>
+
     <!-- sengo -->
     <!-- TODO: sengo might select automatically. -->
-    <div class="yokocenter idinput tatemargin">
-      <input type="checkbox" id="input_sengo" checked data-toggle="toggle" data-on="先手番" data-off="後手番" data-onstyle="success" data-offstyle="warning"/>
+    <div id="input_sengo" class="yokocenter idinput tatemargin">
+      <input type="checkbox" checked data-toggle="toggle" data-on="先手番" data-off="後手番" data-onstyle="success" data-offstyle="warning"/>
     </div>
 
     <!-- random -->
@@ -55,6 +60,16 @@
 
     <!-- footer -->
     <div style="text-align:center;" class="h5 tatemargin">developed by nkkuma</div>
+
+    <!-- firebase lib -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.24.0/firebase-app.js"></script>
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/7.24.0/firebase-analytics.js"></script>
+    <script src="/__/firebase/7.24.0/firebase-auth.js"></script>
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
 
     <!-- js -->
     <script src="js/main_index.js"></script>
