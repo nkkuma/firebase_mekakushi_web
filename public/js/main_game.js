@@ -44,6 +44,22 @@ $("#send").click(function(){
     .catch(console.error);
 });
 
+$("#giveup").click(function(){
+    // TODO: alert and check it is true
+    var giveupmove = 0;  
+    if ((sengo == "on") || (sengo == "sente")){
+        giveupmove = -1;
+    }
+    if ((sengo == "off") || (sengo == "gote")){
+        giveupmove = -2;
+    }
+    var database = firebase.database();
+    database.ref(room).push({
+        move: giveupmove,
+        kif: "giveup",
+    });
+});
+
 var starCountRef = firebase.database().ref(room);
 starCountRef.on("value", (data)=> {
     if (data) {
@@ -61,8 +77,11 @@ starCountRef.on("value", (data)=> {
 
         // assert the below.
         // len(list) == tesu
+        
+        // TODO: check giveup or not
 
 
+        // get before kif
         befkif = list[tesu-1].kif;
         $("#div_before_kif").text("ひとつ前の手："+befkif);
         tesu += 1;
