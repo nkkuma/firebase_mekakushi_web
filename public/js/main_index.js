@@ -1,9 +1,9 @@
 function get_sengo(){
-    var classVal = $('#input_sengo').children().attr('class'); // classの値を取得
+    var classVal = $('#input_sente').attr('class'); // classの値を取得
     var classVals = classVal.split(' '); // 取得した値を分割
-    var offexist = classVals.includes("off");
-    if (offexist) { return "gote"; }
-    else { return "sente"; }
+    var activeexist = classVals.includes("active");
+    if (activeexist) { return "sente"; }
+    else { return "gote"; }
 }
 
 var uid = "";

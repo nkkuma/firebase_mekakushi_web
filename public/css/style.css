@@ -14,7 +14,11 @@ body {
 }
 
 div {
-    font-size: 3rem;
+    font-size: 2.5rem;
+}
+
+.btn {
+    font-size: inherit;
 }
 
 .yokocenter{

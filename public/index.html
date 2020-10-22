@@ -34,9 +34,19 @@
     <div id="div_startbtns" style="display: none;">
       <!-- sengo -->
       <!-- TODO: sengo might select automatically. -->
-      <div id="input_sengo" class="yokocenter idinput tatemargin">
-        <input type="checkbox" checked data-toggle="toggle" data-on="せんて" data-off="ごて" data-onstyle="success" data-offstyle="warning"/>
+      <div class="yokocenter tatemargin">        
+        <div id="input_sengo" class="btn-group btn-group-toggle" data-toggle="buttons">
+          <label id="input_sente" class="btn btn-outline-success active">
+            <input type="radio" name="options" id="option1" autocomplete="off" checked>せんて
+          </label>
+          <label id="input_gote" class="btn btn-outline-warning">
+            <input type="radio" name="options" id="option2" autocomplete="off">ごて
+          </label>
+        </div>
       </div>
+      <!-- <div id="input_sengo" class="yokocenter idinput tatemargin">
+        <input type="checkbox" checked data-toggle="toggle" data-on="せんて" data-off="ごて" data-onstyle="success" data-offstyle="warning"/>
+      </div> -->
   
       <!-- random -->
       <div class="yokocenter tatemargin">
