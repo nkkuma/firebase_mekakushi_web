@@ -1,18 +1,28 @@
 .numselect{
-    width: 120px;
-    height: 80px;
+    width: auto;
 }
 
 .komaselect{
-    width: 120px;
-    height: 80px;
+    width: auto;
 }
 
 .charselect{
-    width: 170px;
-    height: 80px;
+    width: auto;
 }
 
 .sendbtn{
-    width: 170px;
+    width: auto;
+}
+
+.custom-select {
+    font-size: inherit;
+}
+
+option {
+    border: 1px solid #999;
+    font-size: 1rem;
+}
+
+.btn {
+    font-size: inherit;
 }

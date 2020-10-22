@@ -6,6 +6,8 @@ function get_sengo(){
     else { return "sente"; }
 }
 
+var uid = "";
+
 $("#signin_google").click(function(){
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithPopup(provider).then(function(result) {
@@ -15,6 +17,11 @@ $("#signin_google").click(function(){
         var user = result.user;
         // output as log
         console.log(token, user);
+        // get uid
+        uid = user.uid;
+        // enable to push btn
+        $("#signin_google").hide();
+        $("#div_startbtns").show();
         // Sign in Success and enable to click "start game"
         alert("Google認証に成功しました。");
     }).catch(function(error) {
@@ -38,7 +45,7 @@ $("#start_random").click(function(){
     var sengo = get_sengo();
     // redirect to game.html?gameid={gameid}&sengo={sengo}
     currentpage = location.protocol + '//' + location.host;
-    nextpage = currentpage + "/game.html?gameid=" + String(GameID) + "&sengo=" + String(sengo);
+    nextpage = currentpage + "/game.html?gameid=" + String(GameID) + "&sengo=" + String(sengo) + "&uid=" + String(uid);
     location.href = nextpage;
 });
 
@@ -48,6 +55,6 @@ $("#start_friend").click(function(){
     var sengo = get_sengo();
     // redirect to game.html?gameid={gameid}&sengo={sengo}
     currentpage = location.protocol + '//' + location.host;
-    nextpage = currentpage + "/game.html?gameid=" + String(GameID) + "&sengo=" + String(sengo);
+    nextpage = currentpage + "/game.html?gameid=" + String(GameID) + "&sengo=" + String(sengo) + "&uid=" + String(uid);
     location.href = nextpage;
 });

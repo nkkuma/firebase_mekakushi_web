@@ -4,7 +4,7 @@
     <!-- common css -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/style_game.css">
 
@@ -13,7 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script> -->
 
   </head>
   <body>    
@@ -27,11 +27,11 @@
         <div class="col-lg-3"></div>
       </div>
     </div>
-    <div id="div_gameid" style="text-align:center;" class="h5 tatemargin">GameID: 123456789</div>
-    <div id="div_teban" style="text-align:center;" class="h5 tatemargin">あなたの手番です(１手目)</div>
-    <div id="div_before_kif" style="text-align:center;" class="h5 tatemargin">ひとつ前の手：(なし)</div>
+    <div id="div_gameid" style="text-align:center;" class="tatemargin">GameID: 123456789</div>
+    <div id="div_teban" style="text-align:center;" class="tatemargin">あなたの手番です(１手目)</div>
+    <div id="div_before_kif" style="text-align:center;" class="tatemargin">ひとつ前の手：(なし)</div>
     <!-- body -->
-    <div id="wait_enemy" style="text-align:center; display: none;" class="h5 tatemargin">相手が入力中...</div>
+    <div id="wait_enemy" style="text-align:center; display: none;" class="tatemargin">相手が入力中...</div>
     <div id="select_kif" style="text-align:center;"></div>
     <div style="text-align:center;">
       <button id="send" type="submit" class="btn btn-primary btn-lg tatemargin sendbtn">送信</button>
@@ -40,11 +40,11 @@
       <button id="giveup" type="submit" class="btn btn-primary btn-lg tatemargin sendbtn">投了</button>
     </div>
     <div id="div_after_game" style="text-align:center; display: none;">
-      <div id="div_result" style="text-align:center;" class="h5 tatemargin">あなたの勝ちです。</div>
+      <div id="div_result" style="text-align:center;" class="tatemargin">あなたの勝ちです。</div>
       <button id="btn_again" type="submit" class="btn btn-primary btn-lg tatemargin sendbtn">再チャレンジ</button>
     </div>
     <!-- footer -->
-    <div style="text-align:center;" class="h5 tatemargin">developed by nkkuma</div>
+    <div style="text-align:center;" class="tatemargin">developed by nkkuma</div>
 
     <!-- firebase lib -->
     <!-- The core Firebase JS SDK is always required and must be listed first -->

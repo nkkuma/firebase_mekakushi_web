@@ -1,3 +1,22 @@
+@font-face{
+    font-family: 'honyaji';
+    src: url('/font/HonyaJi-Re.ttf') format('truetype');
+}
+
+html {
+    -webkit-locale: "ja";
+}
+
+body {
+    font-family: 'honyaji';
+    font-weight: bold;
+    -webkit-text-size-adjust: 100%;
+}
+
+div {
+    font-size: 3rem;
+}
+
 .yokocenter{
     text-align: center;
     margin-left: auto;
@@ -7,8 +26,4 @@
 .tatemargin{
     margin-top: 1rem;
     margin-bottom: 1rem;
-}
-
-body {
-    text-size-adjust: 250%;
 }

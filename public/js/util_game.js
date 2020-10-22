@@ -1,3 +1,8 @@
+// variable
+const validation_url = "https://us-central1-shogiban2kif.cloudfunctions.net/validate_kif"
+
+// function
+
 function display_mytern(teban){
     $("#wait_enemy").hide();
     $("#select_kif").show();
@@ -10,12 +15,7 @@ function display_enemytern(teban){
     $("#div_teban").text("相手の手番です("+ String(teban) +"手目)");
 }
 
-function get_kif(){
-    let dict_koma = {"fu":"歩","ky":"香","ke":"桂","gi":"銀","ki":"金","ka":"角","hi":"飛","ou":"王","to":"と","ny":"杏","nk":"圭","ng":"全","um":"馬","ry":"龍"}
-    let dict_ichi = {"":"","r":"右","l":"左"}
-    let dict_move = {"":"","u":"上","y":"寄","h":"引"}
-    let dict_nari = {"":"","n":"成","f":"不成","p":"打"}
-
+function get_selection(){
     var place_1 = $("#place_1").val();
     var place_2 = $("#place_2").val();
     var koma    = $("#koma").val();
@@ -23,6 +23,23 @@ function get_kif(){
     var move    = $("#move").val();
     var nari    = $("#nari").val();
 
-    var kif = String(place_1) + String(place_2) + dict_koma[koma] + dict_ichi[ichi] + dict_move[move] + dict_nari[nari];
+    return {
+        "place": parseInt(place_1)*10 + parseInt(place_2),
+        "koma" : String(koma),
+        "ichi" : String(ichi),
+        "move" : String(move),
+        "nari" : String(nari)
+    }
+}
+
+function get_kif(){
+    let dict_koma = {"fu":"歩","ky":"香","ke":"桂","gi":"銀","ki":"金","ka":"角","hi":"飛","ou":"王","to":"と","ny":"杏","nk":"圭","ng":"全","um":"馬","ry":"龍"}
+    let dict_ichi = {"":"","r":"右","l":"左"}
+    let dict_move = {"":"","u":"上","y":"寄","h":"引"}
+    let dict_nari = {"":"","n":"成","f":"不成","p":"打"}
+
+    var selection = get_selection();
+
+    var kif = String(selection.place) + dict_koma[selection.koma] + dict_ichi[selection.ichi] + dict_move[selection.move] + dict_nari[selection.nari];
     return kif;
 }

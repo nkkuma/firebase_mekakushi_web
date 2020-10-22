@@ -20,13 +20,28 @@ let room = "blind-shogi-"+gameid;
 
 $("#send").click(function(){
     // check data
-
-    // store data
-    var database = firebase.database();
-    database.ref(room).push({
-        move: tesu,
-        kif: get_kif(),
-    });
+    var obj = {ID: "2020-10-04_998323", tesu: tesu, kif: get_selection()};
+    var method = "POST";
+    var body = JSON.stringify(obj);
+    var headers = {'Content-Type': 'application/json'};
+    fetch(validation_url, {method, headers, body})
+    .then((res)=> {
+        if (res.ok) {
+            // store data
+            var database = firebase.database();
+            database.ref(room).push({
+                move: tesu,
+                kif: get_kif(),
+            });
+        }
+        else {
+            // alert miss
+            alert("入力が間違えています。チェック値：" + get_kif());
+        }
+        return res;
+    })
+    .then(console.log)
+    .catch(console.error);
 });
 
 var starCountRef = firebase.database().ref(room);
