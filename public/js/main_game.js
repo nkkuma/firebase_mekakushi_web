@@ -45,19 +45,23 @@ $("#send").click(function(){
 });
 
 $("#giveup").click(function(){
-    // TODO: alert and check it is true
-    var giveupmove = 0;  
-    if ((sengo == "on") || (sengo == "sente")){
-        giveupmove = -1;
+    if (confirm("本当に投了しますか？")) {
+        var giveupmove = 0;  
+        if ((sengo == "on") || (sengo == "sente")){
+            giveupmove = -1;
+        }
+        if ((sengo == "off") || (sengo == "gote")){
+            giveupmove = -2;
+        }
+        var database = firebase.database();
+        database.ref(room).push({
+            move: giveupmove,
+            kif: "giveup",
+        });
     }
-    if ((sengo == "off") || (sengo == "gote")){
-        giveupmove = -2;
+    else {
+        alert("キャンセルしました。");
     }
-    var database = firebase.database();
-    database.ref(room).push({
-        move: giveupmove,
-        kif: "giveup",
-    });
 });
 
 var starCountRef = firebase.database().ref(room);
@@ -79,19 +83,35 @@ starCountRef.on("value", (data)=> {
         // len(list) == tesu
         
         // TODO: check giveup or not
-
-
-        // get before kif
-        befkif = list[tesu-1].kif;
-        $("#div_before_kif").text("ひとつ前の手："+befkif);
-        tesu += 1;
-        if ((sengo == "on") || (sengo == "sente")){
-            if (tesu%2 == 1){display_mytern(tesu);}
-            if (tesu%2 == 0){display_enemytern(tesu);}
+        befmove = list[tesu-1].move;
+        if (befmove < 0) {
+            if ((sengo == "on") || (sengo == "sente")){
+                if (befmove == -2){display_win(tesu-1);}
+                if (befmove == -1){display_lose(tesu-1);}
+            }
+            if ((sengo == "off") || (sengo == "gote")){
+                if (befmove == -1){display_win(tesu-1);}
+                if (befmove == -2){display_lose(tesu-1);}
+            }
         }
-        if ((sengo == "off") || (sengo == "gote")){
-            if (tesu%2 == 0){display_mytern(tesu);}
-            if (tesu%2 == 1){display_enemytern(tesu);}
+
+        else {
+            // get before kif
+            befkif = list[tesu-1].kif;
+            $("#div_before_kif").text("ひとつ前の手："+befkif);
+            tesu += 1;
+            if ((sengo == "on") || (sengo == "sente")){
+                if (tesu%2 == 1){display_mytern(tesu);}
+                if (tesu%2 == 0){display_enemytern(tesu);}
+            }
+            if ((sengo == "off") || (sengo == "gote")){
+                if (tesu%2 == 0){display_mytern(tesu);}
+                if (tesu%2 == 1){display_enemytern(tesu);}
+            }
         }
     }
+});
+
+$("#btn_back").click(function(){    
+    location.href = location.protocol + '//' + location.host + "/index.html";
 });

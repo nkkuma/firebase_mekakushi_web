@@ -3,18 +3,6 @@ const validation_url = "https://us-central1-shogiban2kif.cloudfunctions.net/vali
 
 // function
 
-function display_mytern(teban){
-    $("#wait_enemy").hide();
-    $("#select_kif").show();
-    $("#div_teban").text("あなたの手番です("+ String(teban) +"手目)");
-}
-
-function display_enemytern(teban){
-    $("#wait_enemy").show();
-    $("#select_kif").hide();
-    $("#div_teban").text("相手の手番です("+ String(teban) +"手目)");
-}
-
 function get_selection(){
     var place_1 = $("#place_1").val();
     var place_2 = $("#place_2").val();
